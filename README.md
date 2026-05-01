@@ -93,7 +93,7 @@ create table reviews (
 | Project | Tagline | Stack | Role | Status |
 |---------|---------|-------|------|--------|
 | **ECOMON** | Gamified Environmental Education Platform | React.js, Node.js, Gemini API, MongoDB, Tailwind | Full Stack · AI Integration | Prototype · SIH Submission |
-| **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | In Development |
+| **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | Live |
 | **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI, Gemini | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
 | **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS, Netlify | Full Stack | Live |
 

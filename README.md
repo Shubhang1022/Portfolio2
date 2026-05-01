@@ -90,14 +90,18 @@ create table reviews (
 
 ## Projects Featured
 
-| Project | Stack | Status |
-|---------|-------|--------|
-| ECOMON | React, Node.js, Gemini API, MongoDB | Prototype · SIH |
-| EcoInnovate | React, Node.js, OpenAI, TensorFlow | In Development |
-| CarbonChain | Flutter, Supabase, Vertex AI | Hackathon Build |
-| Pulse Analytics | Next.js, ClickHouse, GPT-4o | Internal tool |
-| Motion Kit | React, Framer Motion | Open source |
-| Codex Agent | Python, Anthropic, LangGraph | Research → Prod |
+| Project | Tagline | Stack | Role | Status |
+|---------|---------|-------|------|--------|
+| **ECOMON** | Gamified Environmental Education Platform | React.js, Node.js, Gemini API, MongoDB, Tailwind | Full Stack · AI Integration | Prototype · SIH Submission |
+| **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | In Development |
+| **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI, Gemini | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
+| **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS, Netlify | Full Stack | Live |
+
+### Links
+- ECOMON — [Live](https://ecomon-ten.vercel.app) · [GitHub](https://github.com/shubhang1022/ecomon)
+- EcoInnovate — [Live](https://ecoinnovate.lovable.app) · [GitHub](https://github.com/shubhang1022/reinvent-waste)
+- CarbonChain — APK Download · [GitHub](https://github.com/Shubhang1022/CarbonFootPrint)
+- Drugify — [Live](https://drugify.netlify.app) · [GitHub](https://github.com/Shubhang1022/DRUGIFY)
 
 ---
 

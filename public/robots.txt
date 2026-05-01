@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://web-shooter-dev.preview.emergentagent.com/sitemap.xml

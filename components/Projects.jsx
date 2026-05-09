@@ -80,11 +80,24 @@ function ProjectCard({ p, i, total, onApkClick }) {
   };
   const onLeave = () => { mx.set(0); my.set(0); };
 
+  // Touch support for mobile tilt
+  const onTouchMove = (e) => {
+    const r = ref.current?.getBoundingClientRect();
+    if (!r) return;
+    const touch = e.touches[0];
+    mx.set((touch.clientX - r.left) / r.width - 0.5);
+    my.set((touch.clientY - r.top) / r.height - 0.5);
+  };
+  const onTouchEnd = () => { mx.set(0); my.set(0); };
+
   return (
     <motion.div
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      onTouchCancel={onTouchEnd}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

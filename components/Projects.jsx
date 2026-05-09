@@ -1,7 +1,7 @@
 "use client";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/lib/projects";
 import ApkDownloadModal from "@/components/ApkDownloadModal";
 
@@ -117,19 +117,6 @@ function ProjectCard({ p, i, total, onApkClick }) {
             0{i + 1} / 0{total}
           </div>
           <div className="flex items-center gap-3 text-white/50">
-            {/* GitHub — direct link */}
-            {p.repo && p.repo !== "#" ? (
-              <a
-                href={p.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="View source on GitHub"
-                className="hover:text-[#E11D2E] transition"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Github size={16} />
-              </a>
-            ) : null}
             {/* Demo / detail link */}
             {p.apk ? (
               <button onClick={onApkClick} title="Download APK" className="hover:text-white transition">

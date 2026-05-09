@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { notFound, useParams, useRouter } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Check, ExternalLink, Github, Download } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, ExternalLink, Download } from "lucide-react";
 import { getProject, projects } from "@/lib/projects";
 import CustomCursor from "@/components/CustomCursor";
 import ApkDownloadModal from "@/components/ApkDownloadModal";
@@ -73,17 +73,7 @@ export default function ProjectPage() {
               </a>
             )}
 
-            {/* GitHub — clean direct link */}
-            {p.repo && p.repo !== "#" && (
-              <a
-                href={p.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass hover:bg-white/10 text-white text-sm font-medium transition"
-              >
-                <Github size={14} /> Source Code
-              </a>
-            )}
+            {/* GitHub button removed */}
 
             <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 text-xs text-white/60 font-mono-cyber tracking-wider">
               ● {p.status}

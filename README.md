@@ -21,10 +21,10 @@ A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Ta
 - Custom GPU-accelerated cursor with ring trail
 - Swinging spider decoration that responds to scroll
 - Command palette (`⌘K`) for quick navigation
-- 3D tilt cards with glare effect on projects
+- 3D tilt cards with glare effect on projects — works on both mouse and touch
 - CarbonChain APK direct download with confirmation modal
 - Contact form → saves to Supabase + sends email notification to Gmail
-- Reviews section — submit, edit, delete your own review (token-based, no login)
+- Reviews section — submit, edit, delete your own review (token-based, no login needed)
 - Fully responsive, mobile-optimised
 
 ---
@@ -42,6 +42,12 @@ A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Ta
 | Icons | Lucide React |
 | Fonts | Russo One, Orbitron, Inter |
 | Deployment | Vercel |
+
+---
+
+## Tools of the Trade
+
+`React` `Tailwind` `JavaScript` `Java` `Python` `Node.js` `Flutter` `Figma` `AWS` `Vercel` `Git` `RAG` `LangChain` `Dart` `Framer Motion` `Three.js`
 
 ---
 
@@ -95,13 +101,13 @@ create table reviews (
 | **ECOMON** | Gamified Environmental Education Platform | React.js, Node.js, Gemini API, MongoDB, Tailwind | Full Stack · AI Integration | Prototype · SIH Submission |
 | **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | Live |
 | **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI, Gemini | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
-| **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS, Netlify | Full Stack | Live |
+| **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS | Full Stack | Live |
 
 ### Links
-- ECOMON — [Live](https://ecomon-ten.vercel.app) · [GitHub](https://github.com/shubhang1022/ecomon)
-- EcoInnovate — [Live](https://ecoinnovate.lovable.app) · [GitHub](https://github.com/shubhang1022/reinvent-waste)
-- CarbonChain — APK Download · [GitHub](https://github.com/Shubhang1022/CarbonFootPrint)
-- Drugify — [Live](https://drugify.netlify.app) · [GitHub](https://github.com/Shubhang1022/DRUGIFY)
+- ECOMON — [Live](https://ecomon-ten.vercel.app)
+- EcoInnovate — [Live](https://ecoinnovate.lovable.app)
+- CarbonChain — APK Download (available on portfolio)
+- Drugify — [Live](https://drugify.netlify.app)
 
 ---
 

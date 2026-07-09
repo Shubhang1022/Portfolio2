@@ -1,6 +1,6 @@
 # Shubhang Mishra — Portfolio
 
-> Full Stack Developer · AI Engineer Enthusiast · UI/UX Designer
+> Full Stack Developer · AI Engineer · UI/UX Designer
 
 A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Tailwind CSS, and Framer Motion. Designed to feel alive — every interaction is intentional.
 
@@ -12,8 +12,8 @@ A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Ta
 
 **Pages**
 - `/` — Main portfolio (Hero, About, Skills, Projects, Journey, Testimonials, Contact)
-- `/projects/[slug]` — Individual project case studies
-- `/admin/messages` — Admin view for contact messages
+- `/projects/[slug]` — Individual project case studies with metrics, highlights, and stack breakdown
+- `/admin/messages` — Admin view for contact form submissions
 
 **Features**
 - Cinematic entry animation with logo + video sequence
@@ -21,10 +21,11 @@ A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Ta
 - Custom GPU-accelerated cursor with ring trail
 - Swinging spider decoration that responds to scroll
 - Command palette (`⌘K`) for quick navigation
-- 3D tilt cards with glare effect on projects — works on both mouse and touch
+- 3D tilt cards with glare effect on projects — mouse and touch supported
 - CarbonChain APK direct download with confirmation modal
-- Contact form → saves to Supabase + sends email notification to Gmail
+- Contact form → saves to Supabase + sends email notification via Gmail
 - Reviews section — submit, edit, delete your own review (token-based, no login needed)
+- Coming Soon locked cards for ongoing projects (Nexora)
 - Fully responsive, mobile-optimised
 
 ---
@@ -47,7 +48,7 @@ A cinematic, Spider-verse inspired developer portfolio built with Next.js 14, Ta
 
 ## Tools of the Trade
 
-`React` `Tailwind` `JavaScript` `Java` `Python` `Node.js` `Flutter` `Figma` `AWS` `Vercel` `Git` `RAG` `LangChain` `Dart` `Framer Motion` `Three.js`
+`React` `Next.js` `Tailwind` `JavaScript` `TypeScript` `Python` `Node.js` `FastAPI` `Flutter` `Dart` `Java` `Figma` `Supabase` `Docker` `AWS` `Vercel` `Git` `FAISS` `LangChain` `RAG` `Framer Motion`
 
 ---
 
@@ -100,14 +101,36 @@ create table reviews (
 |---------|---------|-------|------|--------|
 | **ECOMON** | Gamified Environmental Education Platform | React.js, Node.js, Gemini API, MongoDB, Tailwind | Full Stack · AI Integration | Prototype · SIH Submission |
 | **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | Live |
-| **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI, Gemini | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
+| **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
 | **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS | Full Stack | Live |
+| **HireMind AI** | AI Recruiter Copilot — Automate screening, rank smarter | React.js, FastAPI, Supabase, FAISS, Sentence Transformers, Docker | Full Stack · AI/ML Engineer | Live |
+| **Nexora** | Peer-to-Peer Internet Relay Platform | Flutter, Dart, Riverpod, Supabase, Node.js, Socket.IO, WebRTC | Full Stack · Mobile · System Architect | 🔒 Coming Soon |
 
 ### Links
 - ECOMON — [Live](https://ecomon-ten.vercel.app)
 - EcoInnovate — [Live](https://ecoinnovate.lovable.app)
 - CarbonChain — APK Download (available on portfolio)
 - Drugify — [Live](https://drugify.netlify.app)
+- HireMind AI — [Live](https://hiremind-gilt.vercel.app)
+- Nexora — Under Active Development
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.local.example .env.local
+# Fill in your Supabase and Gmail credentials
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view locally.
 
 ---
 

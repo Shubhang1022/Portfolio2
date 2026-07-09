@@ -1,7 +1,7 @@
 "use client";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 import { projects } from "@/lib/projects";
 import ApkDownloadModal from "@/components/ApkDownloadModal";
 
@@ -40,15 +40,19 @@ export default function Projects() {
         </motion.div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 [perspective:1200px]">
-          {projects.map((p, i) => (
-            <ProjectCard
-              key={p.title}
-              p={p}
-              i={i}
-              total={projects.length}
-              onApkClick={() => setApkProject(p)}
-            />
-          ))}
+          {projects.map((p, i) =>
+            p.comingSoon ? (
+              <ComingSoonCard key={p.title} p={p} i={i} total={projects.length} />
+            ) : (
+              <ProjectCard
+                key={p.title}
+                p={p}
+                i={i}
+                total={projects.length}
+                onApkClick={() => setApkProject(p)}
+              />
+            )
+          )}
         </div>
       </div>
 
@@ -56,6 +60,96 @@ export default function Projects() {
         <ApkDownloadModal project={apkProject} onClose={() => setApkProject(null)} />
       )}
     </section>
+  );
+}
+
+function ComingSoonCard({ p, i, total }) {
+  const ref = useRef(null);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [6, -6]), { stiffness: 140, damping: 14 });
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-8, 8]), { stiffness: 140, damping: 14 });
+
+  const onMove = (e) => {
+    const r = ref.current?.getBoundingClientRect();
+    if (!r) return;
+    mx.set((e.clientX - r.left) / r.width - 0.5);
+    my.set((e.clientY - r.top) / r.height - 0.5);
+  };
+  const onLeave = () => { mx.set(0); my.set(0); };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, delay: (i % 3) * 0.1 }}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className="card-glow group relative rounded-2xl overflow-hidden glass p-6 flex flex-col min-h-[280px] will-change-transform cursor-default"
+    >
+      {/* Gradient accent */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-[0.10] group-hover:opacity-[0.18] transition-opacity duration-500`} />
+
+      {/* Frosted lock overlay */}
+      <div className="absolute inset-0 z-10 backdrop-blur-[2px] bg-black/30 rounded-2xl flex flex-col items-center justify-center gap-3">
+        {/* Animated lock pulse */}
+        <motion.div
+          animate={{ scale: [1, 1.08, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="relative"
+        >
+          <div className="absolute inset-0 rounded-full bg-white/10 blur-lg scale-150" />
+          <div className="relative w-14 h-14 rounded-2xl bg-white/8 border border-white/20 flex items-center justify-center">
+            <Lock size={22} className="text-white/70" />
+          </div>
+        </motion.div>
+
+        <div className="text-center px-4">
+          <div className="text-white/90 font-display text-lg tracking-wide">Coming Soon</div>
+          <div className="text-white/45 text-xs mt-1 font-mono-cyber tracking-widest uppercase">
+            Under Active Development
+          </div>
+        </div>
+
+        {/* Animated status dots */}
+        <div className="flex items-center gap-1.5">
+          {[0, 0.3, 0.6].map((delay, idx) => (
+            <motion.span
+              key={idx}
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.6, repeat: Infinity, delay }}
+              className="w-1.5 h-1.5 rounded-full bg-white/50"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Card background content (blurred behind overlay) */}
+      <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full overflow-hidden opacity-10">
+        <img src={LOGO_URL} alt="" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="relative flex-1 blur-[3px] select-none" style={{ transform: "translateZ(30px)" }}>
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] tracking-[0.3em] uppercase text-white/40">
+            0{i + 1} / 0{total}
+          </div>
+        </div>
+        <h3 className="font-display text-2xl mt-4">{p.title}</h3>
+        <p className="mt-3 text-sm text-white/65 leading-relaxed">{p.desc}</p>
+      </div>
+
+      <div className="relative mt-5 flex flex-wrap gap-2 blur-[3px] select-none" style={{ transform: "translateZ(20px)" }}>
+        {p.tech.slice(0, 5).map((t) => (
+          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-white/70 font-mono-cyber tracking-wider">
+            {t}
+          </span>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 

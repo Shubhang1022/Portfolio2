@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { notFound, useParams, useRouter } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Check, ExternalLink, Download } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, ExternalLink, Download, Lock } from "lucide-react";
 import { getProject, projects } from "@/lib/projects";
 import CustomCursor from "@/components/CustomCursor";
 import ApkDownloadModal from "@/components/ApkDownloadModal";
@@ -14,6 +14,78 @@ export default function ProjectPage() {
   const router = useRouter();
   const p = getProject(params?.slug);
   if (!p) return notFound();
+
+  // Coming soon — show locked page
+  if (p.comingSoon) {
+    return (
+      <main className="relative min-h-screen bg-[#050505] text-white overflow-x-hidden flex flex-col">
+        <div className="comic-bg" />
+        <div className="relative z-20 mx-auto max-w-6xl w-full px-6 md:px-10 pt-10 flex items-center justify-between">
+          <button
+            onClick={() => router.push("/#projects")}
+            className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white glass-soft rounded-full px-4 py-2 transition"
+          >
+            <ArrowLeft size={16} /> Back
+          </button>
+          <a href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full overflow-hidden ring-1 ring-red-600/40">
+              <img src={LOGO_URL} alt="" className="w-full h-full object-cover" />
+            </div>
+            <span className="font-display text-sm tracking-wide">SHUBHANG</span>
+          </a>
+        </div>
+
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-xl w-full"
+          >
+            {/* Lock icon with glow */}
+            <motion.div
+              animate={{ scale: [1, 1.06, 1] }}
+              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+              className="relative mx-auto w-24 h-24 mb-8"
+            >
+              <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${p.accent} opacity-30 blur-2xl scale-150`} />
+              <div className="relative w-24 h-24 rounded-3xl glass border border-white/15 flex items-center justify-center">
+                <Lock size={34} className="text-white/70" />
+              </div>
+            </motion.div>
+
+            <div className="text-xs tracking-[0.4em] uppercase text-white/40 mb-3 font-mono-cyber">
+              // Ongoing Project
+            </div>
+            <h1 className="font-display text-5xl md:text-6xl leading-tight mb-4">{p.title}</h1>
+            <p className="text-white/60 text-lg leading-relaxed mb-2">{p.tagline}</p>
+            <p className="text-white/40 text-sm leading-relaxed mb-10 max-w-md mx-auto">{p.desc}</p>
+
+            {/* Animated status badge */}
+            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass border border-white/10 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400" />
+              </span>
+              <span className="text-xs text-white/70 font-mono-cyber tracking-widest uppercase">
+                Under Active Development
+              </span>
+            </div>
+
+            {/* Tech stack preview */}
+            <div className="flex flex-wrap justify-center gap-2 mt-2">
+              {p.tech.map((t) => (
+                <span key={t} className="text-[11px] px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/50 font-mono-cyber tracking-wider">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+        <CustomCursor />
+      </main>
+    );
+  }
 
   const [showApk, setShowApk] = useState(false);
 

@@ -68,7 +68,7 @@ export default function ProjectPage() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400" />
               </span>
               <span className="text-xs text-white/70 font-mono-cyber tracking-widest uppercase">
-                Under Active Development
+                {p.status || "Under Active Development"}
               </span>
             </div>
 

@@ -103,7 +103,7 @@ create table reviews (
 | **EcoInnovate** | Turn e-waste into smart innovation | React.js, Node.js, OpenAI API, TensorFlow, Redis | Full Stack AI Developer | Live |
 | **CarbonChain** | AI-Powered Carbon Tracking for Supply Chains | Flutter, Node.js, Supabase, Google Maps API, Vertex AI | Founding Engineer · Full Stack · AI | Prototype · Hackathon Build |
 | **Drugify** | Smart AI-driven drug safety companion | Next.js, OpenAI API, Tailwind CSS | Full Stack | Live |
-| **HireMind AI** | AI Recruiter Copilot — Automate screening, rank smarter | React.js, FastAPI, Supabase, FAISS, Sentence Transformers, Docker | Full Stack · AI/ML Engineer | Live |
+| **HireMind AI** | AI Recruiter Copilot — Automate screening, rank smarter | React.js, FastAPI, Supabase, FAISS, Sentence Transformers, Docker | Full Stack · AI/ML Engineer | 🔒 Work in Progress |
 | **Nexora** | Peer-to-Peer Internet Relay Platform | Flutter, Dart, Riverpod, Supabase, Node.js, Socket.IO, WebRTC | Full Stack · Mobile · System Architect | 🔒 Coming Soon |
 
 ### Links
@@ -111,7 +111,7 @@ create table reviews (
 - EcoInnovate — [Live](https://ecoinnovate.lovable.app)
 - CarbonChain — APK Download (available on portfolio)
 - Drugify — [Live](https://drugify.netlify.app)
-- HireMind AI — [Live](https://hiremind-gilt.vercel.app)
+- HireMind AI — Under Active Development
 - Nexora — Under Active Development
 
 ---

@@ -108,9 +108,9 @@ function ComingSoonCard({ p, i, total }) {
         </motion.div>
 
         <div className="text-center px-4">
-          <div className="text-white/90 font-display text-lg tracking-wide">Coming Soon</div>
+          <div className="text-white/90 font-display text-lg tracking-wide">{p.lockTitle || "Coming Soon"}</div>
           <div className="text-white/45 text-xs mt-1 font-mono-cyber tracking-widest uppercase">
-            Under Active Development
+            {p.lockDesc || "Under Active Development"}
           </div>
         </div>
 

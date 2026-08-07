@@ -16,7 +16,7 @@ const events = [
     subtitle: "B.Tech begins",
     desc: "Fell into code like a radioactive bite. Started with Java, discovered the web and never looked back.",
     icon: GraduationCap,
-  },``
+  },
   {
     year: "Present",
     title: "Now(AI LEARNING)",

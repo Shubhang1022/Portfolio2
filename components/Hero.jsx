@@ -94,7 +94,7 @@ export default function Hero() {
           {/* Stats */}
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
             {[
-              { k: "20+", v: "Projects" },
+              { k: "10+", v: "Projects" },
               { k: "3+", v: "Years Coding" },
               { k: "∞", v: "Curiosity" },
             ].map((s) => (

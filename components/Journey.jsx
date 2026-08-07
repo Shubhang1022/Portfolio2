@@ -14,7 +14,8 @@ const events = [
     year: "2024",
     title: "The Career",
     subtitle: "B.Tech begins",
-    desc: "College life started with an enthusiam of making a successful career in Technology."
+    desc: "College life started with an enthusiam of making a successful career in Technology.",
+    icon: GraduationCap,
   },
   {
     year: "Present",

@@ -4,13 +4,6 @@ import { Briefcase, GraduationCap, Rocket, Sparkles } from "lucide-react";
 
 const events = [
   {
-    year: "2022",
-    title: "The Origin",
-    subtitle: "B.Tech begins",
-    desc: "Fell into code like a radioactive bite. Started with Java, discovered the web and never looked back.",
-    icon: GraduationCap,
-  },
-  {
     year: "2023",
     title: "Full Stack Era",
     subtitle: "React · Node · Mongo",
@@ -18,7 +11,14 @@ const events = [
     icon: Briefcase,
   },
   {
-    year: "2025",
+    year: "2024",
+    title: "The Origin",
+    subtitle: "B.Tech begins",
+    desc: "Fell into code like a radioactive bite. Started with Java, discovered the web and never looked back.",
+    icon: GraduationCap,
+  },``
+  {
+    year: "Present",
     title: "Now(AI LEARNING)",
     subtitle: "RAG , LANGCHAIN",
     desc: "ENTHUSIAM OF LEARNING MORE AND MORE. NOW THE TURN IS OF AI-ML.",

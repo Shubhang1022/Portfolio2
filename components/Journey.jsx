@@ -7,15 +7,14 @@ const events = [
     year: "2023",
     title: "Full Stack Era",
     subtitle: "React · Node · Mongo",
-    desc: "Shipped first end-to-end products. Built dashboards, auth systems, and fell in love with clean APIs.",
+    desc: "Shipped first end-to-end products. Built dashboards, auth systems, and fell in love with clean APIs.Started with Java, discovered the web and never looked back.",
     icon: Briefcase,
   },
   {
     year: "2024",
-    title: "The Origin",
+    title: "The Career",
     subtitle: "B.Tech begins",
-    desc: "Fell into code like a radioactive bite. Started with Java, discovered the web and never looked back.",
-    icon: GraduationCap,
+    desc: "College life started with an enthusiam of making a successful career in Technology."
   },
   {
     year: "Present",
